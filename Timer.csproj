@@ -1,0 +1,575 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{E207A243-740D-4CA5-8E63-0AAC5F678588}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>WindowsApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Timer</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include=".git\ms-persist.xml" />
+    <Content Include="packages\CredentialManagement.1.0.2\lib\net35\CredentialManagement.dll" />
+    <Content Include="packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.dll" />
+    <Content Include="packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.MsDelta.dll" />
+    <Content Include="packages\DeltaCompressionDotNet.1.1.0\lib\net20\DeltaCompressionDotNet.PatchApi.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\build\Microsoft.Data.Entity.Build.Tasks.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\Icon.png" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\about_EntityFramework6.help.txt" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.pdb" />
+    <Content Include="packages\log4net.2.0.15\lib\net20\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net20\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net35\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net35\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net40-client\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net40-client\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net40\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net40\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net45\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net45\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard1.3\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard1.3\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard2.0\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard2.0\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\package-icon.png" />
+    <Content Include="packages\Microsoft.Office.Interop.Outlook.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Outlook.dll" />
+    <Content Include="packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Mdb.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Mdb.pdb" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.pdb" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Pdb.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Pdb.pdb" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Rocks.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\net40\Mono.Cecil.Rocks.pdb" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.Mdb.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.Mdb.pdb" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.pdb" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.Pdb.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.Pdb.pdb" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.Rocks.dll" />
+    <Content Include="packages\Mono.Cecil.0.11.2\lib\netstandard2.0\Mono.Cecil.Rocks.pdb" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\net45\PInvoke.Kernel32.dll" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\net45\PInvoke.Kernel32.xml" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\net46\PInvoke.Kernel32.dll" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\net46\PInvoke.Kernel32.xml" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\netstandard2.0\PInvoke.Kernel32.dll" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\netstandard2.0\PInvoke.Kernel32.xml" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\uap10.0\PInvoke.Kernel32.dll" />
+    <Content Include="packages\PInvoke.Kernel32.0.7.78\lib\uap10.0\PInvoke.Kernel32.xml" />
+    <Content Include="packages\PInvoke.Windows.Core.0.7.78\lib\net45\PInvoke.Windows.Core.dll" />
+    <Content Include="packages\PInvoke.Windows.Core.0.7.78\lib\net45\PInvoke.Windows.Core.xml" />
+    <Content Include="packages\PInvoke.Windows.Core.0.7.78\lib\netstandard2.0\PInvoke.Windows.Core.dll" />
+    <Content Include="packages\PInvoke.Windows.Core.0.7.78\lib\netstandard2.0\PInvoke.Windows.Core.xml" />
+    <Content Include="packages\PInvoke.Windows.Core.0.7.78\lib\uap10.0\PInvoke.Windows.Core.dll" />
+    <Content Include="packages\PInvoke.Windows.Core.0.7.78\lib\uap10.0\PInvoke.Windows.Core.xml" />
+    <Content Include="packages\SharpCompress.0.17.1\lib\net35\SharpCompress.dll" />
+    <Content Include="packages\SharpCompress.0.17.1\lib\net45\SharpCompress.dll" />
+    <Content Include="packages\SharpCompress.0.17.1\lib\netstandard1.0\SharpCompress.dll" />
+    <Content Include="packages\SharpCompress.0.17.1\lib\netstandard1.3\SharpCompress.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\lib\Net45\NuGet.Squirrel.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\lib\Net45\NuGet.Squirrel.pdb" />
+    <Content Include="packages\squirrel.windows.2.0.1\lib\Net45\Squirrel.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\lib\Net45\Squirrel.pdb" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\7z.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\7z.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\candle.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\light.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\Microsoft.Deployment.Resources.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\Microsoft.Deployment.WindowsInstaller.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\rcedit.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\Setup.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\signtool.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\Squirrel-Mono.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\Squirrel.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\StubExecutable.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\SyncReleases.exe" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\wconsole.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\winterop.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\wix.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\WixNetFxExtension.dll" />
+    <Content Include="packages\squirrel.windows.2.0.1\tools\WriteZipToSetup.exe" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net20\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net20\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net40\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net40\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net451\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net451\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net45\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net45\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\x64\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\x86\SQLite.Interop.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net20\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net20\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net40\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net40\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net451\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net451\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net45\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net45\System.Data.SQLite.xml" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net46\System.Data.SQLite.dll" />
+    <Content Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net46\System.Data.SQLite.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\net461\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\LICENSE.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\net45\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard1.1\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.dll" />
+    <Content Include="packages\System.Buffers.4.5.1\ref\netstandard2.0\System.Buffers.xml" />
+    <Content Include="packages\System.Buffers.4.5.1\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Buffers.4.5.1\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Buffers.4.5.1\version.txt" />
+    <Content Include="packages\System.Memory.4.5.4\lib\net461\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.4\lib\net461\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard1.1\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.dll" />
+    <Content Include="packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.xml" />
+    <Content Include="packages\System.Memory.4.5.4\LICENSE.TXT" />
+    <Content Include="packages\System.Memory.4.5.4\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Memory.4.5.4\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Memory.4.5.4\version.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\LICENSE.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\net461\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\net461\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\version.txt" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard1.0\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard2.0\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\LICENSE.TXT" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\version.txt" />
+    <Content Include="TimeManagementConsole\bin\Debug\System.Buffers.dll" />
+    <Content Include="TimeManagementConsole\bin\Debug\System.Memory.dll" />
+    <Content Include="TimeManagementConsole\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="TimeManagementConsole\bin\Debug\TimeManagementConsole.exe" />
+    <Content Include="TimeManagementConsole\bin\Debug\TimeManagementConsole.pdb" />
+    <Content Include="TimeManagementConsole\obj\Debug\TimeManagementConsole.csproj.FileListAbsolute.txt" />
+    <Content Include="TimeManagementConsole\obj\Debug\TimeManagementConsole.exe" />
+    <Content Include="TimeManagementConsole\obj\Debug\TimeManagementConsole.pdb" />
+    <Content Include="TimeRecordingManagementWindowsService\bin\Debug\TimeRecordingManagementWindowsService.exe" />
+    <Content Include="TimeRecordingManagementWindowsService\bin\Debug\TimeRecordingManagementWindowsService.pdb" />
+    <Content Include="TimeRecordingManagementWindowsService\obj\Debug\TimeRecordingManagementWindowsService.csproj.FileListAbsolute.txt" />
+    <Content Include="TimeRecordingManagementWindowsService\obj\Debug\TimeRecordingManagementWindowsService.exe" />
+    <Content Include="TimeRecordingManagementWindowsService\obj\Debug\TimeRecordingManagementWindowsService.pdb" />
+    <Content Include="TimerMarg\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="%24tf\10\23b9c2ba-7a60-46dc-a84b-2e91a1ab5a4d.gz" />
+    <None Include="%24tf\10\2f34eb2a-a39c-41e7-9c8f-2da2f3779cd7.gz" />
+    <None Include="%24tf\10\4201a95a-63aa-4f17-a5c3-97a595e248fc.gz" />
+    <None Include="%24tf\10\8b0b885a-371e-49b4-ab7f-80646d57388f.gz" />
+    <None Include="%24tf\10\f833a1ea-b498-49ed-bd63-5d283a319419.gz" />
+    <None Include="%24tf\11\04d27a9b-55f5-4d9a-b1e6-a38afbb6c6d1.gz" />
+    <None Include="%24tf\11\0e2273eb-7f75-427b-9920-c1c101f19228.gz" />
+    <None Include="%24tf\11\1b901a6b-6b32-4907-a29a-95f8d5ed859b.gz" />
+    <None Include="%24tf\12\a4aa5a5c-7416-42cc-aa79-9e9352bb5188.gz" />
+    <None Include="%24tf\12\be44e8ec-51c2-4dc9-835b-ede16ee9a1d5.gz" />
+    <None Include="%24tf\12\bf813b1c-b9d3-4740-ae37-76434c803b22.gz" />
+    <None Include="%24tf\12\fd6c217c-158f-4a4d-86ba-da6e2750aff9.gz" />
+    <None Include="%24tf\13\2ede789d-d9e7-4831-8514-0cb676bd72ea.gz" />
+    <None Include="%24tf\13\43c37dfd-aea8-45a9-8155-faa2fdcb18a8.gz" />
+    <None Include="%24tf\15\4d7d7b9f-54f3-4cb3-9c46-62808e9d21cc.gz" />
+    <None Include="%24tf\1\0167b351-b135-4aee-8727-9382a75cc684.gz" />
+    <None Include="%24tf\1\560e0bc1-f413-4d25-88c1-33e1490a05ef.gz" />
+    <None Include="%24tf\1\588f8971-4f65-4fb6-a501-1271c4230d9d.gz" />
+    <None Include="%24tf\1\b50d07f1-45be-4200-8904-aeaf19fb25f3.gz" />
+    <None Include="%24tf\2\45502a62-2d8c-474d-b08c-6570705426f8.gz" />
+    <None Include="%24tf\2\61d89e62-7366-4153-bd8e-1f303bc7c6e5.gz" />
+    <None Include="%24tf\2\6461f682-29bf-4cf2-a56d-ee23d239a904.gz" />
+    <None Include="%24tf\2\c3a864f2-abc8-49f5-9415-6fc717e7411e.gz" />
+    <None Include="%24tf\2\db662172-810f-4850-9cb2-118d1862fe85.gz" />
+    <None Include="%24tf\4\05189624-39a7-4fc9-aabd-02ec5aa723ab.gz" />
+    <None Include="%24tf\4\68566314-f127-46da-890d-0a0111c0e957.gz" />
+    <None Include="%24tf\4\7b4151c4-3f06-4031-ab93-e74d5e3525bb.gz" />
+    <None Include="%24tf\5\33fa1335-fa68-4730-a0d4-56b42f5ecda5.gz" />
+    <None Include="%24tf\5\fd77c1d5-1ffc-4b16-846e-361dd463e009.gz" />
+    <None Include="%24tf\6\631e53b6-e2b2-4ef0-bf8a-bef916231a2a.gz" />
+    <None Include="%24tf\7\bf917527-0b7f-4d71-8519-251fb2186fd9.gz" />
+    <None Include="%24tf\8\c9fc85f8-c49f-4bcf-b212-87219b741d0c.gz" />
+    <None Include="%24tf\9\3fd675d9-a50d-4430-ba2f-dafab6435577.gz" />
+    <None Include="%24tf\9\53c4aa89-b100-4538-a376-78e9e828ab05.gz" />
+    <None Include="%24tf\9\b3a02399-aee4-4875-931a-9b7f26bbd6e3.gz" />
+    <None Include="%24tf\9\c3535329-919c-4d98-b445-fb60fa42e064.gz" />
+    <None Include="%24tf\localversion.tf1" />
+    <None Include="%24tf\localversion.tfb" />
+    <None Include="%24tf\pendingchanges.tf1" />
+    <None Include="%24tf\pendingchanges.tfb" />
+    <None Include="%24tf\properties.tf1" />
+    <None Include=".git\COMMIT_EDITMSG" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-merge-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\push-to-checkout.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\master" />
+    <None Include=".git\objects\05\5ea4732e7136f14a8f74ecc093a9c78b172537" />
+    <None Include=".git\objects\0c\4fefa7275055a9fadb0011030a9303c2a51068" />
+    <None Include=".git\objects\0c\c05e3920b3641e05c26bed8e6dd62b0c446ecb" />
+    <None Include=".git\objects\18\0969ab99dde4977e93075f5e7f34f38787ad85" />
+    <None Include=".git\objects\1a\58efae9d3ae44b066b811f61d66996a34f9ef2" />
+    <None Include=".git\objects\1a\f7de150c99c12dd67a509fe57c10d63e4eeb04" />
+    <None Include=".git\objects\1c\c52998d437c02ebe4a2fcdfc485c3cd78d31f8" />
+    <None Include=".git\objects\1f\bfe89559792b257daea67b53b3be660ae33559" />
+    <None Include=".git\objects\1f\f0c423042b46cb1d617b81efb715defbe8054d" />
+    <None Include=".git\objects\23\5f1b0bfbba45ec4640aaa7874eab29248bbfde" />
+    <None Include=".git\objects\2f\e3192df8b7d422b4ab0c484da0d5e4bf118624" />
+    <None Include=".git\objects\30\7a49bd4b2fd6e3306d94aa691ed204f595f013" />
+    <None Include=".git\objects\34\56c480558bf6115fe1b6bcef1f32bcfd53f53b" />
+    <None Include=".git\objects\34\d8a146dbe4ddb5dc0a31f86146923ea84ea2d7" />
+    <None Include=".git\objects\35\8222e1500401d6edecf0e2cac09b830cdfabbb" />
+    <None Include=".git\objects\36\52632d11da59190b5c82af05ab394a45fbf384" />
+    <None Include=".git\objects\38\b6d966902b4b4e6e2cd86f6cc4d70296e82f7c" />
+    <None Include=".git\objects\39\645652af62950ebf3b28ec3a5400dcec30b1c4" />
+    <None Include=".git\objects\3d\e00a4128f6ae57331b7bd5ee9fa16bbb5c5f80" />
+    <None Include=".git\objects\45\a70be5cd002564ca3002a7f069e4f02dda4a4c" />
+    <None Include=".git\objects\59\cc486516d90f6508f2d3a1d30beee17e9a497e" />
+    <None Include=".git\objects\60\61c32c2df23372987e3659f1cc9a34e365113e" />
+    <None Include=".git\objects\6d\3205eae3b2fc617848aa8618a490e9ca6b50cb" />
+    <None Include=".git\objects\6f\253846ebc1e6f1499b4c383ffcc258fb48e49a" />
+    <None Include=".git\objects\79\e33979b033bfebd765ec6654d5dfa17d0472f7" />
+    <None Include=".git\objects\7b\b3f0bc5c9419adccf4af22fb948da62e9dcc07" />
+    <None Include=".git\objects\7d\3176be01ff06df13e03634715f7aec285df87b" />
+    <None Include=".git\objects\7e\341145a847c5417163aaf84caf12fc1a68da7a" />
+    <None Include=".git\objects\84\ec5467aed311384665b857d828d07e405cf84f" />
+    <None Include=".git\objects\86\be036b9c7e9af6107cd968906bada6fea5bcaf" />
+    <None Include=".git\objects\91\0d2d4ca643a9c65211fb7e884d05e0c01804be" />
+    <None Include=".git\objects\94\91a2fda28342ab358eaf234e1afe0c07a53d62" />
+    <None Include=".git\objects\9d\809c9d09f3dcc0df7e537a0fdd18af236c8331" />
+    <None Include=".git\objects\9e\366975fd446b5fde76b6920dc3e553e15e5e50" />
+    <None Include=".git\objects\a2\ac04f8119f01ab0b04843b0044d37af8c05efa" />
+    <None Include=".git\objects\a5\61e4e268476ee36bd6f75aad3694708976cf03" />
+    <None Include=".git\objects\a6\1dc09ea442fcf610ed968e91c7c8f363bbb448" />
+    <None Include=".git\objects\a7\67f1d118539188b21fad38c28bb104aa46fd2d" />
+    <None Include=".git\objects\a8\0d236385b30e070d7422c74e14c32565bda05d" />
+    <None Include=".git\objects\ab\577cc82f7f0b276d66d4d8c256686a1597aa74" />
+    <None Include=".git\objects\ae\752875feb091ae7109074e00146074ab058288" />
+    <None Include=".git\objects\af\7dbebbacef595e3089c01c05671016c21a8304" />
+    <None Include=".git\objects\b1\11ded70f53187c3525b382b13d75b1a5ab51b3" />
+    <None Include=".git\objects\b2\317432eb25cd46a1d5f245db0ba727612737a2" />
+    <None Include=".git\objects\c1\d13fa93a3c7773eb25fd4983a622887ce08149" />
+    <None Include=".git\objects\c2\96475f6d61d037870fce0c88e1a65b8c5930c4" />
+    <None Include=".git\objects\ce\b3b37bb1ab6d1df6b80955d1979a1ad0a3c23a" />
+    <None Include=".git\objects\d2\865f26a4d27c2b3ec343f8dd654259cd98996f" />
+    <None Include=".git\objects\ed\9f6d90280147f66712f1e6058c4306903ad78a" />
+    <None Include=".git\objects\f0\d3a70ceaa69fb70811f58254dc738e0f939eac" />
+    <None Include=".git\objects\f3\70027f750f8c5adf2b29ebca649dec1109c694" />
+    <None Include=".git\objects\f3\a71f71166a9e0d15d3f1d9318c394601375be8" />
+    <None Include=".git\objects\f7\cc63a8c7b1a2e86ae08cd7cdb1a3749e0deb43" />
+    <None Include=".git\objects\f8\262955c68dcecaebfa1cb776df935734e3eaa0" />
+    <None Include=".git\objects\f9\a8979efb569923bc228c561b32aa31ebc21175" />
+    <None Include=".git\objects\fd\6ca047ba32d4dfc2e8e042d0ca431c60a350f3" />
+    <None Include=".git\objects\ff\571a6433fb63c55bc7535fc579a4c0f37c60f1" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\master" />
+    <None Include=".vs\TimeRecordingManagement\config\applicationhost.config" />
+    <None Include=".vs\TimeRecordingManagement\v16\.suo" />
+    <None Include="App.config" />
+    <None Include="LIVE_DEMO_DB_TIMER2.bak" />
+    <None Include="log4net.config" />
+    <None Include="packages.config" />
+    <None Include="packages\CredentialManagement.1.0.2\.signature.p7s" />
+    <None Include="packages\CredentialManagement.1.0.2\CredentialManagement.1.0.2.nupkg" />
+    <None Include="packages\DeltaCompressionDotNet.1.1.0\.signature.p7s" />
+    <None Include="packages\DeltaCompressionDotNet.1.1.0\DeltaCompressionDotNet.1.1.0.nupkg" />
+    <None Include="packages\EntityFramework.6.4.4\.signature.p7s" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.DefaultItems.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\EntityFramework.6.4.4.nupkg" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\install.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.runtimeconfig.json" />
+    <None Include="packages\log4net.2.0.15\.signature.p7s" />
+    <None Include="packages\log4net.2.0.15\log4net.2.0.15.nupkg" />
+    <None Include="packages\Microsoft.Office.Interop.Outlook.15.0.4797.1003\.signature.p7s" />
+    <None Include="packages\Microsoft.Office.Interop.Outlook.15.0.4797.1003\Microsoft.Office.Interop.Outlook.15.0.4797.1003.nupkg" />
+    <None Include="packages\Microsoft.Office.Interop.Word.15.0.4797.1003\.signature.p7s" />
+    <None Include="packages\Microsoft.Office.Interop.Word.15.0.4797.1003\Microsoft.Office.Interop.Word.15.0.4797.1003.nupkg" />
+    <None Include="packages\Mono.Cecil.0.11.2\.signature.p7s" />
+    <None Include="packages\Mono.Cecil.0.11.2\Mono.Cecil.0.11.2.nupkg" />
+    <None Include="packages\PInvoke.Kernel32.0.7.78\.signature.p7s" />
+    <None Include="packages\PInvoke.Kernel32.0.7.78\lib\uap10.0\PInvoke.Kernel32.pri" />
+    <None Include="packages\PInvoke.Kernel32.0.7.78\PInvoke.Kernel32.0.7.78.nupkg" />
+    <None Include="packages\PInvoke.Windows.Core.0.7.78\.signature.p7s" />
+    <None Include="packages\PInvoke.Windows.Core.0.7.78\lib\uap10.0\PInvoke.Windows.Core.pri" />
+    <None Include="packages\PInvoke.Windows.Core.0.7.78\PInvoke.Windows.Core.0.7.78.nupkg" />
+    <None Include="packages\SharpCompress.0.17.1\.signature.p7s" />
+    <None Include="packages\SharpCompress.0.17.1\SharpCompress.0.17.1.nupkg" />
+    <None Include="packages\squirrel.windows.2.0.1\.signature.p7s" />
+    <None Include="packages\squirrel.windows.2.0.1\build\squirrel.windows.props" />
+    <None Include="packages\squirrel.windows.2.0.1\squirrel.windows.2.0.1.nupkg" />
+    <None Include="packages\squirrel.windows.2.0.1\tools\candle.exe.config" />
+    <None Include="packages\squirrel.windows.2.0.1\tools\darice.cub" />
+    <None Include="packages\squirrel.windows.2.0.1\tools\light.exe.config" />
+    <None Include="packages\squirrel.windows.2.0.1\tools\Squirrel.com" />
+    <None Include="packages\squirrel.windows.2.0.1\tools\template.wxs" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\.signature.p7s" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\buildTransitive\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\buildTransitive\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\buildTransitive\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\buildTransitive\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\buildTransitive\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net40\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net451\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net45\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net20\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net40\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net451\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net45\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\lib\net46\System.Data.SQLite.dll.altconfig" />
+    <None Include="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0\Stub.System.Data.SQLite.Core.NetFramework.1.0.116.0.nupkg" />
+    <None Include="packages\System.Buffers.4.5.1\.signature.p7s" />
+    <None Include="packages\System.Buffers.4.5.1\lib\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\lib\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\netcoreapp2.0\_._" />
+    <None Include="packages\System.Buffers.4.5.1\ref\uap10.0.16299\_._" />
+    <None Include="packages\System.Buffers.4.5.1\System.Buffers.4.5.1.nupkg" />
+    <None Include="packages\System.Memory.4.5.4\.signature.p7s" />
+    <None Include="packages\System.Memory.4.5.4\lib\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.4\ref\netcoreapp2.1\_._" />
+    <None Include="packages\System.Memory.4.5.4\System.Memory.4.5.4.nupkg" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\.signature.p7s" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\System.Runtime.CompilerServices.Unsafe.4.5.3.nupkg" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\.signature.p7s" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netcoreapp2.1\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinios10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\netcoreapp2.1\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinios10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\System.Threading.Tasks.Extensions.4.5.4.nupkg" />
+    <None Include="Properties\Settings.settings" />
+    <None Include="TimeManagementConsole\App.config" />
+    <None Include="TimeManagementConsole\bin\Debug\TimeManagementConsole.exe.config" />
+    <None Include="TimeManagementConsole\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="TimeManagementConsole\obj\Debug\TimeManagementConsole.csproj.AssemblyReference.cache" />
+    <None Include="TimeManagementConsole\obj\Debug\TimeManagementConsole.csproj.CopyComplete" />
+    <None Include="TimeManagementConsole\obj\Debug\TimeManagementConsole.csproj.CoreCompileInputs.cache" />
+    <None Include="TimeManagementConsole\packages.config" />
+    <None Include="TimeManagementConsole\TimeManagementConsole.csproj" />
+    <None Include="TimeManagementConsole\TimeManagementConsole.csproj.vspscc" />
+    <None Include="TimeRecordingManagement.csproj.vspscc" />
+    <None Include="TimeRecordingManagementWindowsService\App.config" />
+    <None Include="TimeRecordingManagementWindowsService\bin\Debug\TimeRecordingManagementWindowsService.exe.config" />
+    <None Include="TimeRecordingManagementWindowsService\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="TimeRecordingManagementWindowsService\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="TimeRecordingManagementWindowsService\obj\Debug\TimeRecordingManagementWindowsService.csproj.AssemblyReference.cache" />
+    <None Include="TimeRecordingManagementWindowsService\obj\Debug\TimeRecordingManagementWindowsService.csproj.CoreCompileInputs.cache" />
+    <None Include="TimeRecordingManagementWindowsService\obj\Debug\TimeRecordingManagementWindowsService.csproj.GenerateResource.cache" />
+    <None Include="TimeRecordingManagementWindowsService\TimeRecordingManagementWindowsService.csproj" />
+    <None Include="TimeRecordingManagementWindowsService\TimeRecordingManagementWindowsService.csproj.vspscc" />
+    <None Include="TimeRecordingManagement_TemporaryKey.pfx" />
+    <None Include="TimerMarg\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBaseAccessLayer.cs" />
+    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information.cs" />
+    <Compile Include="Information.Designer.cs">
+      <DependentUpon>Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installer1.cs" />
+    <Compile Include="Installer1.Designer.cs">
+      <DependentUpon>Installer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListData.cs" />
+    <Compile Include="ListData.Designer.cs">
+      <DependentUpon>ListData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="TimeManagementConsole\DataBaseAccessLayer.cs" />
+    <Compile Include="TimeManagementConsole\obj\Debug\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
+    <Compile Include="TimeManagementConsole\OperationManagement.cs" />
+    <Compile Include="TimeManagementConsole\Program.cs" />
+    <Compile Include="TimeManagementConsole\Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeRecordingManagementWindowsService\obj\Debug\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
+    <Compile Include="TimeRecordingManagementWindowsService\Program.cs" />
+    <Compile Include="TimeRecordingManagementWindowsService\ProjectInstaller.cs" />
+    <Compile Include="TimeRecordingManagementWindowsService\ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeRecordingManagementWindowsService\Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeRecordingManagementWindowsService\Service1.cs" />
+    <Compile Include="TimeRecordingManagementWindowsService\Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserCredentials.cs" />
+    <Compile Include="UserCredentials.Designer.cs">
+      <DependentUpon>UserCredentials.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information.resx">
+      <DependentUpon>Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListData.resx">
+      <DependentUpon>ListData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="TimeRecordingManagementWindowsService\obj\Debug\TimeRecordingManagementWindowsService.ProjectInstaller.resources" />
+    <EmbeddedResource Include="TimeRecordingManagementWindowsService\ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCredentials.resx">
+      <DependentUpon>UserCredentials.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="%24tf\0\" />
+    <Folder Include="%24tf\14\" />
+    <Folder Include="%24tf\3\" />
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
+    <Folder Include="TimeManagementConsole\obj\Debug\TempPE\" />
+    <Folder Include="TimeRecordingManagementWindowsService\obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>
